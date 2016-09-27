@@ -3,7 +3,7 @@
 # 安装需求
 
 apt-get install redis-server
-pip3 install python-redis gunicorn
+pip3 install redis python-redis gunicorn gevent
 
 # 如果执行上述安装报错，尝试下面两项
 apt-get install build-essential
