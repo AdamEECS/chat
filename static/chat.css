@@ -32,10 +32,10 @@
     bottom: 0px;
     left: 100px;
 }
-.avatar__image {
-    -moz-transform:scale(1，-1);
-    -webkit-transform:scale(1，-1);
-    -o-transform:scale(1，-1);
-    transform:scale(1，-1);
+.avatar-transform {
+    -moz-transform:scaleY(-1);
+    -webkit-transform:scaleY(-1);
+    -o-transform:scaleY(-1);
+    transform:scaleY(-1);
     filter:FlipV;
 }
