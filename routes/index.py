@@ -47,19 +47,25 @@ def chat_add():
     msg = request.get_json()
     # name = msg.get('name', '')
     u = current_user()
-    name = u.username
-    if name == '':
-        name = '<匿名>'
     content = msg.get('content', '')
     channel = msg.get('channel', '')
+    form = {
+        'user_id': u.id,
+    }
     r = {
-        'name': name,
+        'name': u.username,
         'content': content,
         'channel': channel,
         'created_time': current_time(),
     }
-    message = json.dumps(r, ensure_ascii=False)
-    print('debug', message)
-    # 用 redis 发布消息
-    red.publish(chat_channel, message)
-    return 'OK'
+    form.update(r)
+    chat = Chat(form)
+    if chat.valid():
+        chat.save()
+        message = json.dumps(r, ensure_ascii=False)
+        print('debug', message)
+        # 用 redis 发布消息
+        red.publish(chat_channel, message)
+        return 'OK'
+    else:
+        abort(410)

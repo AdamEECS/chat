@@ -10,6 +10,7 @@ from flask import abort
 from flask import Response
 from functools import wraps
 from models.user import User
+from models.chat import Chat
 import time
 import json
 

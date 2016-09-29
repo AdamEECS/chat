@@ -16,4 +16,11 @@ class Chat(db.Model, ModelMixin):
         print('chat init', form)
         self.content = form.get('content', '')
         self.channel = form.get('channel', '')
+        self.user_id = form.get('user_id', '')
         self.created_time = timestamp()
+
+    def valid(self):
+        n = Chat.query.filter_by(user_id=self.user_id).order_by(Chat.id.desc()).first()
+        delta = self.created_time - n.created_time
+        length = 0 < len(self.content) < 1000
+        return length and delta > 3
