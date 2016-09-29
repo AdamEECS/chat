@@ -6,6 +6,7 @@ class User(db.Model, ModelMixin):
     __tablename__ = 'users'
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(100))
+    password = db.Column(db.String(100))
     deleted = db.Column(db.Boolean, default=False)
 
     chats = db.relationship('Chat', backref="user")

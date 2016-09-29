@@ -15,6 +15,7 @@ def index():
 def register():
     form = request.form
     u = User(form)
+    print(u.valid())
     if u.valid():
         u.save()
     else:
