@@ -30,6 +30,6 @@ def login_required(f):
         print('login required', u)
         if u is None:
             print('not login')
-            return redirect(url_for('user.lindex'))
+            return redirect(url_for('user.index'))
         return f(*args, **kwargs)
     return function
