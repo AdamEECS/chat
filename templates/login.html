@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+</head>
+<body>
+<div class="back-img">
+    <div class="content clearfix profile">
+
+        <div class="login-box">
+            <div class="tex">
+                登录
+            </div>
+            <div class="login-box-body">
+                <form action="/login" method="post" class="login-form">
+                    <input name="username" placeholder="username">
+                    <br>
+                    <input name="password" placeholder="password">
+                    <br>
+                    <button class="button-login">登 录</button>
+                </form>
+                <div class="des">
+                    <!--<a href="{{ url_for('index.register') }}">-->
+                        <!--<button class="button-login">注 册</button>-->
+                    <!--</a>-->
+                </div>
+            </div>
+
+        </div>
+
+        <div class="login-box">
+            <div class="tex">
+                注册
+            </div>
+            <div class="login-box-body">
+                <form action="/register" method="post" class="login-form">
+                    <input name="username" placeholder="username">
+                    <br>
+                    <input name="password" placeholder="password">
+                    <br>
+                    <button class="button-login">注 册</button>
+                </form>
+                <div class="des">
+                    <!--<a href="{{ url_for('index.index') }}">-->
+                        <!--<button class="button-login">登 录</button>-->
+                    <!--</a>-->
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+</body>
+</html>
