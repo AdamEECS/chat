@@ -7,5 +7,5 @@ Model = User
 
 
 @main.route('/login')
-def login_index():
+def index():
     return render_template('login.html')

@@ -32,6 +32,7 @@ def subscribe():
 
 
 @main.route('/')
+@login_required
 def index_view():
     return render_template('index.html')
 
