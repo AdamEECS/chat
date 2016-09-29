@@ -1,5 +1,3 @@
-# chat
-
 ## 安装需求
 
 apt-get install redis-server
