@@ -25,3 +25,16 @@ find / -name redis.conf
 在conf找到 bind 127.0.0.1 这行，把前面的注释去掉，保存
 开启redis的方式改为
 redis-server /etc/redis/redis.conf &
+
+## 更新记录
+20160929
+1，采用标准目录结构
+2，增加注册登录
+3，聊天室内容会被保存到数据库
+4，数据库相关操作使用redischat.py文件
+> python3 redischat.py db init
+> python3 redischat.py db migrate
+> python3 redischat.py db upgrade
+
+5，开启方式改为wsgi.py：
+> gunicorn --worker-class=gevent -t 9999 wsgi:app -b 0.0.0.0:3000
