@@ -21,6 +21,7 @@ class Chat(db.Model, ModelMixin):
 
     def valid(self):
         n = Chat.query.filter_by(user_id=self.user_id).order_by(Chat.id.desc()).first()
+        print('last', n)
         if n is not None:
             delta = (self.created_time - n.created_time) > 3
         else:
