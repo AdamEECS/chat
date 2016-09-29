@@ -46,6 +46,7 @@ def current_time():
 def chat_add():
     msg = request.get_json()
     # name = msg.get('name', '')
+    u = current_user()
     name = u.username
     if name == '':
         name = '<匿名>'
