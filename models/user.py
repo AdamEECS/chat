@@ -13,6 +13,7 @@ class User(db.Model, ModelMixin):
     def __init__(self, form):
         super(User, self).__init__()
         self.username = form.get('username', '')
+        self.password = form.get('password', '')
 
     # 验证注册用户的合法性的
     def valid(self):
