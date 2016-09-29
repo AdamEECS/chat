@@ -23,8 +23,10 @@ class Chat(db.Model, ModelMixin):
         n = Chat.query.filter_by(user_id=self.user_id).order_by(Chat.id.desc()).first()
         print('last', n)
         if n is not None:
-            delta = (self.created_time - n.created_time) > 3
+            delta = (self.created_time - n.created_time) > 2
         else:
             delta = True
         length = 0 < len(self.content) < 1000
-        return length and delta
+        script = self.content.find('<script') == -1
+        print(script)
+        return length and delta and script
