@@ -15,8 +15,9 @@ def index():
 def register():
     form = request.form
     u = User(form)
-    print(u.valid())
-    if u.valid():
+    u_valid =u.valid()
+    print(u_valid)
+    if u_valid[0]:
         u.save()
     else:
         abort(410)
