@@ -33,7 +33,7 @@ def subscribe():
 
 @main.route('/')
 @login_required
-def index_view():
+def index():
     return render_template('index.html')
 
 
@@ -42,9 +42,11 @@ def current_time():
 
 
 @main.route('/chat/add', methods=['POST'])
+@login_required
 def chat_add():
     msg = request.get_json()
-    name = msg.get('name', '')
+    # name = msg.get('name', '')
+    name = u.username
     if name == '':
         name = '<匿名>'
     content = msg.get('content', '')
