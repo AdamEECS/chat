@@ -16,6 +16,7 @@ import json
 
 def current_user():
     uid = session.get('user_id')
+    print('uid', uid)
     if uid is not None:
         u = User.query.get(uid)
         return u

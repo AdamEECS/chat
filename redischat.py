@@ -5,6 +5,7 @@ from flask_script import Manager
 from models import db
 
 from models.user import User
+from models.chat import Chat
 
 from routes.index import main as routes_index
 from routes.user import main as routes_user
