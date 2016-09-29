@@ -22,7 +22,7 @@ def register_routes(app):
 
 def configure_app():
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True
-    app.secret_key = 'secret key'
+    app.secret_key = 'super secret key'
     app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///{}'.format(db_path)
     db.init_app(app)
     register_routes(app)
