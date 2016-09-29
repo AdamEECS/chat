@@ -23,7 +23,7 @@ nano /etc/redis/redis.conf
 如果实际路径不一样，可以用以下指令查找
 find / -name redis.conf
 在conf找到 bind 127.0.0.1 这行，把前面的注释去掉，保存
-开启redis的方式改为
+开启redis的方式改为  
 redis-server /etc/redis/redis.conf &
 
 ## 更新记录
