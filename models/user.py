@@ -32,3 +32,22 @@ class User(db.Model, ModelMixin):
             msgs.append(message)
         status = valid_username and valid_username_len and valid_password_len
         return status, msgs
+
+    def validate_login(self, u):
+        return u.username == self.username and u.password == self.password
+
+    def change_password(self, password):
+        if 6 <= len(password) <= 20:
+            self.password = password
+            self.save()
+            return True
+        else:
+            return False
+
+    def change_avatar(self, avatar):
+        if 6 <= len(avatar) <= 1000:
+            self.avatar = avatar
+            self.save()
+            return True
+        else:
+            return False
