@@ -49,5 +49,3 @@ redis-server /etc/redis/redis.conf &
 
 5，开启方式改为wsgi.py：
 > gunicorn --worker-class=gevent -t 9999 wsgi:app -b 0.0.0.0:3000
-
-6，git测试
