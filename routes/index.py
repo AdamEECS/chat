@@ -48,7 +48,8 @@ def chat_add():
     # name = msg.get('name', '')
     u = current_user()
     content = msg.get('content', '')
-    content = content.replace("<", "'<'")
+    content = content.replace("<", "&lt;")
+    content = content.replace(">", "&gt;")
     channel = msg.get('channel', '')
     form = {
         'user_id': u.id,
