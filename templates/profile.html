@@ -32,6 +32,17 @@
       <div>
         <form action="/user/update_avatar" method="post">
           头像：<input name="avatar" value="{{ user.avatar }}">
+          <select name="avatar" value="{{ user.avatar }}">
+              <option value='tanaka'>tanaka</option>
+              <option value='kanra'>kanra</option>
+              <option value='zawa'>zawa</option>
+              <option value='zaika'>zaika</option>
+              <option value='gg'>gg</option>
+              <option value='setton'>setton</option>
+              <option value='kakka'>kakka</option>
+              <option value='eight'>eight</option>
+              <option value='bakyura'>bakyura</option>
+          </select>
           <button>修改头像</button>
         </form>
       </div>
@@ -52,7 +63,7 @@
                         <div class="tail-wrap center" style="background-size: 65px;">
                             <div class="tail-mask"></div>
                         </div>
-                        <p class="body select-text">预览测试内容</p>
+                        <p class="body select-text">大家好，我是{{ user.username }}</p>
                     </div>
                 </dd>
             </dl>
