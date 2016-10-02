@@ -3,9 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <title>Login</title>
+    <link rel="stylesheet" href="/static/drrr.css">
+    <link rel="stylesheet" href="/static/chat.css">
 </head>
 <body>
-<div class="back-img">
+    <div id="body">
+
+        <div class="home-wrap">
+
+            <div class="logo-wrapper">
+                <div class="login-logo front"></div>
+                <div class="login-logo back"></div>
+            </div>
+
+            <form action="/user/login" method="post">
+                <div class="login-form field" id="t_form">
+                    <div class="home-name">
+                        <label for="form-name">Username:</label>
+                        <input type="text" id="form-name" name="username" size="10" maxlength="40" class="home-name-input" required="" autocomplete="on">
+                    </div>
+
+                    <div class="home-submit">
+                        <input type="submit" name="login" value="ENTER" class="submit-input home-submit-input">
+                    </div>
+                </div>
+
+          </form>
+
+        </div>
+    </div>
+
+<!-- <div class="back-img">
     <div class="content clearfix profile">
 
         <div class="login-box">
@@ -46,6 +74,6 @@
         </div>
 
     </div>
-</div>
+</div> -->
 </body>
 </html>
