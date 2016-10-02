@@ -58,9 +58,10 @@ def register():
     if u_valid[0]:
         u.save()
         print(u.id, u.username)
+        session['user_id'] = u.id
     else:
         abort(410)
-    return redirect(url_for('user.index'))
+    return redirect(url_for('user.profile'))
 
 
 @main.route('/login', methods=['POST'])
