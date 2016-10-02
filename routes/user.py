@@ -11,6 +11,11 @@ def index():
     return render_template('login.html')
 
 
+@main.route('/reg_view')
+def reg_view():
+    return render_template('register.html')
+
+
 @main.route('/profile')
 def profile():
     u = current_user()
