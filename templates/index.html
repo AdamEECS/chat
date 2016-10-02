@@ -60,7 +60,26 @@
             </div>
         </div>
         `;
-        return t;
+        var t1 = `
+        <dl class="talk kanra-2x">
+            <dt class="dropdown">
+                <div class="avatar avatar-kanra-2x"></div>
+                <div class="name" data-toggle="dropdown">
+                    <span class="select-text">${name}</span>
+                </div>
+                <ul class="dropdown-menu" role="menu"></ul>
+            </dt>
+            <dd class="bounce">
+                <div class="bubble">
+                    <div class="tail-wrap center" style="background-size: 65px;">
+                        <div class="tail-mask"></div>
+                    </div>
+                    <p class="body select-text">${content}</p>
+                </div>
+            </dd>
+        </dl>
+        `
+        return t1;
     };
 
     var insertChats = function(chats) {

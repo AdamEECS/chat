@@ -39,3 +39,6 @@
     transform:scaleY(-1);
     filter:FlipV;
 }
+#id-div-channels {
+    display: none;
+}
