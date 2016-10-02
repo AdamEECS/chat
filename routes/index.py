@@ -54,6 +54,7 @@ def chat_add():
     }
     r = {
         'name': u.username,
+        'avatar': u.avatar,
         'content': content,
         'channel': channel,
         'created_time': current_time(),

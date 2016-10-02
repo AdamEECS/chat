@@ -23,7 +23,7 @@
 #id-div-chats {
     /*background: red;*/
     height: 100%;
-    padding-bottom: 111px;
+    padding: 10px 10px 115px 10px;
     overflow-y: scroll;
 }
 
