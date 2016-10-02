@@ -48,7 +48,7 @@
                     <div class="tail-wrap center" style="background-size: 65px;">
                         <div class="tail-mask"></div>
                     </div>
-                    <p class="body select-text">${content}</p>
+                    <p class="body select-text"><pre>${content}</pre></p>
                 </div>
             </dd>
         </dl>
@@ -91,6 +91,7 @@
     var sendMessage = function(){
       var name = $('#id-input-name').val();
       var content = $('#id-input-content').val();
+      $('#id-input-content').val('')
       var message = {
         name: name,
         content: content,
