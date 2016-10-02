@@ -30,7 +30,7 @@
         <form action="/user/update_avatar" method="post">
           头像：当前选择为"{{ user.avatar }}"
           <select name="avatar">
-              <option value='tanaka'>tanaka</option>
+              <option value='tanaka'>tanaka<div class="avatar avatar-{{ user.avatar }}"></div></option>
               <option value='kanra'>kanra</option>
               <option value='zawa'>zawa</option>
               <option value='zaika'>zaika</option>
@@ -39,6 +39,20 @@
               <option value='kakka'>kakka</option>
               <option value='eight'>eight</option>
               <option value='bakyura'>bakyura</option>
+              <option value='kuromu-2x'>kuromu-2x</option>
+              <option value='zaika-2x'>zaika-2x</option>
+              <option value='kanra-2x'>kanra-2x</option>
+              <option value='sharo-2x'>sharo-2x</option>
+              <option value='bakyura-2x'>bakyura-2x</option>
+              <option value='gaki-2x'>gaki-2x</option>
+              <option value='saki-2x'>saki-2x</option>
+              <option value='rotchi-2x'>rotchi-2x</option>
+              <option value='tanaka-2x'>tanaka-2x</option>
+              <option value='kyo-2x'>kyo-2x</option>
+              <option value='setton-2x'>setton-2x</option>
+              <option value='san-2x'>san-2x</option>
+              <option value='junsui-2x'>junsui-2x</option>
+              <option value='ya-2x'>ya-2x</option>
           </select>
           <button>修改头像</button>
         </form>
