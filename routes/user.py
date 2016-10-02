@@ -26,7 +26,7 @@ def update_password():
     password = request.form.get('password', '')
     print('password', password)
     if u.change_password(password):
-        print('修改成功')
+        print('用户密码修改成功')
     else:
         print('用户密码修改失败')
     return redirect(url_for('user.profile'))
@@ -36,9 +36,9 @@ def update_password():
 def update_avatar():
     u = current_user()
     avatar = request.form.get('avatar', '')
-    print('password', avatar)
+    print('avatar', avatar)
     if u.change_avatar(avatar):
-        print('修改成功')
+        print('头像修改成功')
     else:
         print('头像修改失败')
     return redirect(url_for('user.profile'))

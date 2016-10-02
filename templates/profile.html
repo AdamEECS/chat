@@ -9,17 +9,14 @@
         body {
             margin: 30px;
         }
-        input, button {
+        input, button, select {
             color: black;
         }
     </style>
 </head>
 <body>
   <div class="head">
-    <div class="left title">聊天室</div>
-    <div class="right">
-      <span><a href="/">返回聊天室</a></span>
-    </div>
+    <div class="left title">聊天室 > <a href="/">返回聊天室</a></div>
   </div>
 <div class="background">
     <div>用户名： {{ user.username }}</div>
@@ -31,8 +28,8 @@
       </div>
       <div>
         <form action="/user/update_avatar" method="post">
-          头像：<input name="avatar" value="{{ user.avatar }}">
-          <select name="avatar" value="{{ user.avatar }}">
+          头像：当前选择为"{{ user.avatar }}"
+          <select name="avatar">
               <option value='tanaka'>tanaka</option>
               <option value='kanra'>kanra</option>
               <option value='zawa'>zawa</option>
