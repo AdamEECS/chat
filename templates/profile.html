@@ -26,9 +26,34 @@
           <button>修改密码</button>
         </form>
       </div>
+
+      <div>头像：当前选择为"{{ user.avatar }}"</div>
+
+      <div>
+        预览：
+        <div>
+            <dl class="talk {{ user.avatar }}">
+                <dt class="dropdown">
+                    <div class="avatar avatar-{{ user.avatar }}"></div>
+                    <div class="name" data-toggle="dropdown">
+                        <span class="select-text">{{ user.username }}</span>
+                    </div>
+                    <ul class="dropdown-menu" role="menu"></ul>
+                </dt>
+                <dd class="bounce">
+                    <div class="bubble">
+                        <div class="tail-wrap center" style="background-size: 65px;">
+                            <div class="tail-mask"></div>
+                        </div>
+                        <p class="body select-text">大家好，我是{{ user.username }}</p>
+                    </div>
+                </dd>
+            </dl>
+        </div>
+      </div>
+
       <div>
         <form action="/user/update_avatar" method="post">
-          头像：当前选择为"{{ user.avatar }}"
           <select name="avatar">
               <option value='tanaka'>tanaka<div class="avatar avatar-{{ user.avatar }}"></div></option>
               <option value='kanra'>kanra</option>
@@ -58,28 +83,6 @@
         </form>
       </div>
 
-      <div>
-        头像预览：
-        <div>
-            <dl class="talk {{ user.avatar }}">
-                <dt class="dropdown">
-                    <div class="avatar avatar-{{ user.avatar }}"></div>
-                    <div class="name" data-toggle="dropdown">
-                        <span class="select-text">{{ user.username }}</span>
-                    </div>
-                    <ul class="dropdown-menu" role="menu"></ul>
-                </dt>
-                <dd class="bounce">
-                    <div class="bubble">
-                        <div class="tail-wrap center" style="background-size: 65px;">
-                            <div class="tail-mask"></div>
-                        </div>
-                        <p class="body select-text">大家好，我是{{ user.username }}</p>
-                    </div>
-                </dd>
-            </dl>
-        </div>
-      </div>
 </div>
 </body>
 </html>
