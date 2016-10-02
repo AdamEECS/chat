@@ -5,6 +5,14 @@
     <link rel="stylesheet" href="/static/drrr.css">
     <link rel="stylesheet" href="/static/chat.css">
     <title>个人资料</title>
+    <style media="screen">
+        body {
+            margin: 30px;
+        }
+        input, button {
+            color: black;
+        }
+    </style>
 </head>
 <body>
   <div class="head">
@@ -14,34 +22,26 @@
     </div>
   </div>
 <div class="background">
-  <div class="content clearfix profile">
-    <div class="box profile-box">
-      <div>
-          用户名： {{ user.username }}
-      </div>
+    <div>用户名： {{ user.username }}</div>
       <div>
         <form action="/user/update_password" method="post">
-          密码：
-          <input name="password" value="">
+          密码：<input name="password" value="">
           <button>修改密码</button>
         </form>
       </div>
       <div>
         <form action="/user/update_avatar" method="post">
-          头像：
-          <input name="avatar" value="{{ user.avatar }}" style="width:400px;">
+          头像：<input name="avatar" value="{{ user.avatar }}">
           <button>修改头像</button>
         </form>
       </div>
-      <div class="description ">
-        没做图片上传，这里只能填外链url，将就一下（
-      </div>
+
       <div>
         头像预览：
-        <div >
-            <dl class="talk kanra-2x">
+        <div>
+            <dl class="talk {{ user.avatar }}">
                 <dt class="dropdown">
-                    <div class="avatar avatar-kanra-2x"></div>
+                    <div class="avatar avatar-{{ user.avatar }}"></div>
                     <div class="name" data-toggle="dropdown">
                         <span class="select-text">{{ user.username }}</span>
                     </div>
@@ -58,9 +58,6 @@
             </dl>
         </div>
       </div>
-    </div>
-
-  </div>
-  </div>
+</div>
 </body>
 </html>
