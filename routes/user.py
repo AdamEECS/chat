@@ -57,7 +57,7 @@ def register():
     print(u_valid)
     if u_valid[0]:
         u.save()
-        print(u)
+        print(u.id, u.username)
     else:
         abort(410)
     return redirect(url_for('user.index'))
