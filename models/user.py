@@ -1,5 +1,4 @@
-from . import ModelMixin
-from . import db
+from . import *
 
 
 class User(db.Model, ModelMixin):
@@ -8,6 +7,8 @@ class User(db.Model, ModelMixin):
     username = db.Column(db.String(100))
     password = db.Column(db.String(100))
     deleted = db.Column(db.Boolean, default=False)
+    avatar = db.Column(db.String(100))
+    created_time = db.Column(db.Integer, default=0)
 
     chats = db.relationship('Chat', backref="user")
 
@@ -15,6 +16,8 @@ class User(db.Model, ModelMixin):
         super(User, self).__init__()
         self.username = form.get('username', '')
         self.password = form.get('password', '')
+        self.avatar = form.get('avatar', 'tanaka')
+        self.created_time = timestamp()
 
     # 验证注册用户的合法性的
     def valid(self):
@@ -38,7 +41,7 @@ class User(db.Model, ModelMixin):
         return u.username == self.username and u.password == self.password
 
     def change_password(self, password):
-        if 6 <= len(password) <= 20:
+        if 3 <= len(password) <= 20:
             self.password = password
             self.save()
             return True
@@ -46,7 +49,7 @@ class User(db.Model, ModelMixin):
             return False
 
     def change_avatar(self, avatar):
-        if 6 <= len(avatar) <= 1000:
+        if 2 <= len(avatar) <= 1000:
             self.avatar = avatar
             self.save()
             return True

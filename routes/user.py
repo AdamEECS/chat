@@ -11,6 +11,39 @@ def index():
     return render_template('login.html')
 
 
+@main.route('/profile')
+def profile():
+    u = current_user()
+    if u is not None:
+        return render_template('profile.html', user=u)
+    else:
+        return redirect(url_for('.index'))
+
+
+@main.route('/update_password', methods=['POST'])
+def update_password():
+    u = current_user()
+    password = request.form.get('password', '')
+    print('password', password)
+    if u.change_password(password):
+        print('修改成功')
+    else:
+        print('用户密码修改失败')
+    return redirect(url_for('user.profile'))
+
+
+@main.route('/update_avatar', methods=['POST'])
+def update_avatar():
+    u = current_user()
+    avatar = request.form.get('avatar', '')
+    print('password', avatar)
+    if u.change_avatar(avatar):
+        print('修改成功')
+    else:
+        print('头像修改失败')
+    return redirect(url_for('user.profile'))
+
+
 @main.route('/register', methods=['POST'])
 def register():
     form = request.form
